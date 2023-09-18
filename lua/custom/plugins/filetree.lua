@@ -12,4 +12,7 @@ return {
 	config = function()
 		require('neo-tree').setup {}
 	end,
+	keys = {
+		{ "<leader>,", "<cmd>Neotree toggle<cr>", desc = "[T]oggle file tree" },
+	}
 }

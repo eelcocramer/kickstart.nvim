@@ -2,7 +2,8 @@ return {
   'leoluz/nvim-dap-go',
   ft = { "go" },
   config = function()
-    require('dap-go').setup {
+    local dap = require('dap-go')
+    dap.setup {
       -- Additional dap configurations can be added.
       -- dap_configurations accepts a list of tables where each entry
       -- represents a dap configuration. For more details do:
@@ -31,5 +32,7 @@ return {
         build_flags = "",
       },
     }
+    vim.keymap.set('n', '<leader>t', dap.debug_test, { desc = 'Debug: Debug Test' })
+    vim.keymap.set('n', '<leader>T', dap.debug_last_test, { desc = 'Debug: Debug Last Test' })
   end,
 }
