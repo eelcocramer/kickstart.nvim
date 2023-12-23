@@ -213,17 +213,26 @@ require('lazy').setup({
     },
   },
   {
-    'projekt0n/github-nvim-theme',
+    "fynnfluegge/monet.nvim",
+    name = "monet",
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      require('github-theme').setup({
-        -- ...
-      })
-
-      vim.cmd('colorscheme github_dark_dimmed')
+      vim.cmd('colorscheme monet')
     end,
   },
+  --  {
+  --    'projekt0n/github-nvim-theme',
+  --    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+  --    priority = 1000, -- make sure to load this before all the other start plugins
+  --    config = function()
+  --      require('github-theme').setup({
+  --        -- ...
+  --      })
+  --
+  --      vim.cmd('colorscheme github_dark_dimmed')
+  --    end,
+  --  },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -232,7 +241,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'github_dark',
+        theme = 'monet', -- github_dark',
         component_separators = '|',
         section_separators = '',
       },
@@ -591,7 +600,9 @@ require('which-key').register({
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup {
+  ensure_installed = { "gopls", "zls" }
+}
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
