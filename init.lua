@@ -761,6 +761,14 @@ require('lazy').setup {
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
+      require('monet').setup {
+        transparent_background = false,
+        semantic_tokens = true,
+        highlight_override = {},
+        color_overrides = {},
+        styles = {},
+      }
+
       vim.cmd 'colorscheme monet'
     end,
   },
@@ -789,10 +797,10 @@ require('lazy').setup {
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
-      require('mini.statusline').setup()
-      MiniStatusline.section_location = function()
-        return '%2l:%-2v'
-      end
+      -- require('mini.statusline').setup()
+      -- MiniStatusline.section_location = function()
+      --  return '%2l:%-2v'
+      -- end
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
@@ -821,6 +829,20 @@ require('lazy').setup {
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
+  },
+  {
+    -- Set lualine as statusline
+    'nvim-lualine/lualine.nvim',
+    -- See `:help lualine.txt`
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+    opts = {
+      options = {
+        icons_enabled = true,
+        theme = 'monet', -- github_dark',
+        component_separators = '|',
+        section_separators = '',
+      },
+    },
   },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
