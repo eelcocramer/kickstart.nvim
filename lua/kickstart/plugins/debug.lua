@@ -15,6 +15,9 @@ return {
     'rcarriga/nvim-dap-ui',
     'theHamsta/nvim-dap-virtual-text',
 
+    -- Required dependency for nvim-dap-ui
+    'nvim-neotest/nvim-nio',
+
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
