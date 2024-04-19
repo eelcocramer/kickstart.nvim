@@ -92,7 +92,8 @@ vim.g.maplocalleader = ' '
 
 if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
-  vim.opt.guifont = 'FiraCode Nerd Font:h11' -- font to use in neovide
+  -- vim.opt.guifont = 'FiraCode Nerd Font:h11' -- font to use in neovide
+  vim.opt.guifont = 'JetBrains Mono:h11'
   vim.g.neovide_remember_window_size = true
   vim.g.neovide_input_use_logo = 1 -- enable use of the logo (cmd) key
   vim.g.neovide_scroll_animation_length = 0.1
