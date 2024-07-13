@@ -40,7 +40,7 @@ return {
       }
     end,
     keys = {
-      { '<leader>m', desc = 'MiniMap' },
+      { '<leader>m', desc = '[M]iniMap' },
       { '<leader>mo', "<cmd>lua require('mini.map').open()<cr>", desc = 'MiniMap open' },
       { '<leader>mc', "<cmd>lua require('mini.map').close()<cr>", desc = 'MiniMap close' },
       { '<leader>mt', "<cmd>lua require('mini.map').toggle()<cr>", desc = 'MiniMap toggle' },
