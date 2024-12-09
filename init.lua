@@ -348,25 +348,25 @@ require('lazy').setup({
       },
 
       -- Document existing key chains
---      require('which-key').add {
---        { '<leader>c', group = '[C]ode' },
---        { '<leader>c_', hidden = true },
---        { '<leader>d', group = '[D]ocument' },
---        { '<leader>d_', hidden = true },
---        { '<leader>h', group = 'Git [H]unk' },
---        { '<leader>h_', hidden = true },
---        { '<leader>r', group = '[R]ename' },
---        { '<leader>r_', hidden = true },
---        { '<leader>s', group = '[S]earch' },
---        { '<leader>s_', hidden = true },
---        { '<leader>t', group = '[T]oggle' },
---        { '<leader>t_', hidden = true },
---        { '<leader>w', group = '[W]orkspace' },
---        { '<leader>w_', hidden = true },
---      }
---      -- visual mode
---      require('which-key').add { '<leader>h', group = 'Git [H]unk', mode = 'v' }
---    end,
+      --      require('which-key').add {
+      --        { '<leader>c', group = '[C]ode' },
+      --        { '<leader>c_', hidden = true },
+      --        { '<leader>d', group = '[D]ocument' },
+      --        { '<leader>d_', hidden = true },
+      --        { '<leader>h', group = 'Git [H]unk' },
+      --        { '<leader>h_', hidden = true },
+      --        { '<leader>r', group = '[R]ename' },
+      --        { '<leader>r_', hidden = true },
+      --        { '<leader>s', group = '[S]earch' },
+      --        { '<leader>s_', hidden = true },
+      --        { '<leader>t', group = '[T]oggle' },
+      --        { '<leader>t_', hidden = true },
+      --        { '<leader>w', group = '[W]orkspace' },
+      --        { '<leader>w_', hidden = true },
+      --      }
+      --      -- visual mode
+      --      require('which-key').add { '<leader>h', group = 'Git [H]unk', mode = 'v' }
+      --    end,
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
@@ -755,11 +755,15 @@ require('lazy').setup({
         lua = { 'stylua' },
         xml = { 'xmlformat' },
         c = { 'clang-format' },
+        markdown = { 'mdslw' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+      formatters = {
+        mdslw = { prepend_args = { '--stdin-filepath', '$FILENAME' } },
       },
     },
   },
@@ -961,7 +965,7 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
- },
+  },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
