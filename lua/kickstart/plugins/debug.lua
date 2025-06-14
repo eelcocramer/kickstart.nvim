@@ -13,7 +13,7 @@ return {
     -- NOTE: And you can specify dependencies as well
     dependencies = {
       -- Installs the debug adapters for you
-      'williamboman/mason.nvim',
+      'mason-org/mason.nvim',
       'jay-babu/mason-nvim-dap.nvim',
 
       -- Add your own debuggers here
@@ -44,12 +44,11 @@ return {
         delve = {
           -- On Windows delve must be run attached or it crashes.
           -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
-          detached = vim.fn.has 'win32' == 0,
-        },
+	},
       }
     end,
   },
-  { 'rcarriga/nvim-dap-ui', enabled = false },
+--  { 'rcarriga/nvim-dap-ui', enabled = false },
   {
     'miroshQa/debugmaster.nvim',
     -- osv is needed if you want to debug neovim lua code. Also can be used
